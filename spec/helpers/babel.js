@@ -1,0 +1,1 @@
+require('babel-cli/node_modules/babel-core/register');

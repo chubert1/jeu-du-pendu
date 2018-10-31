@@ -3,8 +3,7 @@ import './App.css';
 import Letter from './letter/Letter.js'
 import Keyboard from './keyboard/Keyboard.js'
 import Counter from './counter/Counter.js'
-import {Button} from 'reactstrap'
-import PropTypes from 'prop-types';
+
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const allword = ["NOMBRE","GEANTE","CORAUX","ROULEAU","EJECTER","LIVRETS",
@@ -12,11 +11,6 @@ const allword = ["NOMBRE","GEANTE","CORAUX","ROULEAU","EJECTER","LIVRETS",
 "ECLATANTE","MATERIAUX","ANAGRAMME","ULTERIEURE","FACTORISER",
 "RACCROCHER","HIPPOPOTAME","SAUTERELLES"]
 
-Button.propTypes = {
-  color: PropTypes.string, 
-  size: PropTypes.string,
-  onClick: PropTypes.func,
-}
 class App extends Component {
 
   state = {
@@ -24,8 +18,7 @@ class App extends Component {
     keyboard : this.generateKeyboard(),
     selection: [],
     gameState: "en cours",
-  };
-  
+  }
 
 
   generateWords(){
@@ -86,7 +79,7 @@ class App extends Component {
       <div className="hangman">
         <div className="header">
           <h1 className="title">Jeu du pendu</h1>
-          <Button outline color="info" size="sm" onClick={this.newGame}>Nouvelle partie</Button>
+          <button className="btn btn-info" onClick={this.newGame}>Nouvelle partie</button>
         </div>
         <div className="game">
           <div className="content">
